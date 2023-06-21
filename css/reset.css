@@ -1,0 +1,124 @@
+@charset "UTF-8";
+                        
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    min-height:100%;
+}
+body {
+    font-size:16px; 
+    font-family: 'Pretendard';
+    color:var(--main-font-color);
+}
+table, th, td, input, select, button, textarea, pre {
+    font:inherit; 
+    color:inherit;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, select, button, textarea, p, blockquote, table, th, td, a, span {
+    color:var(--main-font-color);
+    font-family: 'Pretendard';
+    box-sizing: border-box;
+    line-height:1;
+}
+ol, ul {
+    list-style:none;
+}
+img, fieldset {
+    border:0;
+}
+img {
+    vertical-align:middle;
+}
+a {
+    color:var(--main-font-color);
+    text-decoration:none;
+}
+table {
+    border-spacing:0; 
+    border-collapse:collapse; 
+    border:0;
+}
+th, td {
+    word-break:break-all; 
+    word-wrap:break-word;
+}
+label, button {
+    cursor:pointer;
+}
+input, button {
+    background:0;
+    border:0; 
+    border-radius:0;
+}
+textarea {
+    resize:none;
+}
+input, button, select, textarea {
+    vertical-align:middle;
+    outline:none;
+    webkit-appearance: none;
+    appearance: none;
+    color:var(--main-font-color);
+    outline: 0 none;
+    box-sizing:border-box;
+    font-family: 'Pretendard';
+}
+address, caption, cite, code, dfn, em, var {
+    font-style:normal;
+}
+hr {
+    clear:both;
+    display:none;
+}
+blockquote, q {
+    quotes:none;
+}
+abbr, acronym {
+    border:0;
+}
+legend, caption {
+    position:absolute;
+    width:1px;
+    height:1px;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
+    display:block;
+}
+h1, h2, h3, h4, h5, h6, strong, b {
+    font-weight:600;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="search"]::-ms-clear,
+input[type="search"]::-ms-reveal{
+	display:none;width:0;height:0;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration{
+	display:none;
+}
+
+.blind {
+    position:absolute;
+    width:1px;
+    height:1px;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.clear:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+
+

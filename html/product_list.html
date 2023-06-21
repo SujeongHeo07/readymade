@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1190">
+    <meta name="description" content="READYMADE">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="READYMADE">
+    <meta property="og:description" content="READYMADE">
+    <meta property="og:url" content="http://READYMADE.com/">
+    <meta property="og:image" content="../image/common/logo.svg">
+    <title>READYMADE Product List</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/sub.css" />
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+    <header class="header type_line">
+        <div class="container">
+
+            <div class="header_upper_wrap">
+                <h1 class="logo"><a href="index.html"><img src="../image/common/logo.svg" alt="READYMADE" /></a></h1>
+    
+                <div class="header_upper">
+                    <form class="search_box">
+                        <input type="search" name="search" title="통합검색" class="search_input" placeholder="키워드, 작가명을 검색해보세요." />
+                        <button type="submit" class="search_btn"><span class="blind">검색버튼</span></button>
+                    </form>
+    
+                    <ul class="user_assi_nav">
+                        <li><a href="javascript:void(0)" class="alarm"><span class="blind">알람</span></a></li>
+                        <li><a href="javascript:void(0)" class="cart"><span class="blind">장바구니</span></a></li>
+                        <li><a href="javascript:void(0)" class="user"><span class="blind">마이페이지</span></a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="gnb_wrapper">
+                <nav class="gnb">
+                    <ul class="depth1">
+                        <li>
+                            <a href="product_list.html">카테고리</a>
+                            <ul class="depth2">
+                                <li><a href="product_list.html">3D 아트</a></li>
+                                <li><a href="product_list.html">포토그래피</a></li>
+                                <li><a href="product_list.html">드로잉</a></li>
+                                <li><a href="product_list.html">디지털아트</a></li>
+                                <li><a href="product_list.html">타이포그래피</a></li>
+                                <li><a href="product_list.html">일러스트레이션</a></li>
+                                <li><a href="product_list.html">캐릭터</a></li>
+                                <li><a href="product_list.html">콜라주</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="product_list.html">전체</a></li>
+                        <li><a href="product_list.html">인기</a></li>
+                        <li><a href="product_list.html">신규</a></li>
+                    </ul>
+
+                    <ul class="depth1">
+                        <li><a href="javascript:void(0)">이벤트</a></li>
+                        <li><a href="javascript:void(0)">고객지원</a></li>
+                    </ul>
+                </nav>
+    
+                <div class="user_assi_box">
+                    <p class="first_user_guide">처음이신가요? <a href="javascript:void(0)">이용가이드</a></p>
+                    <a href="product_edit.html" class="cover_edit_btn">표지등록</a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="wrap">
+
+        <section>
+            <div class="container">
+
+                <h2 class="blind">카테고리</h2>
+                <ul class="category_list type_sub">
+                    <li><button type="buton" class="active" onclick="categoryList(this)"><span class="txt">전체보기</span></button></li>
+                    <li><button type="buton" onclick="categoryList(this)"><span class="txt">3D 아트</span>3D </button></li>
+                    <li><button type="buton" onclick="categoryList(this)"><span class="txt">포토그래피</span></button></li>
+                    <li><button type="buton" onclick="categoryList(this)"><span class="txt">타이포그래피</span></button></li>
+                    <li><button type="buton" onclick="categoryList(this)"><span class="txt">드로잉</span></button></li>
+                    <li><button type="buton" onclick="categoryList(this)"><span class="txt">일러스트레이션</span></button></li>
+                    <li><button type="buton" onclick="categoryList(this)"><span class="txt">캐릭터</span></button></li>
+                    <li><button type="buton" onclick="categoryList(this)"><span class="txt">콜라주</span></button></li>
+                </ul>
+
+            </div>
+        </section>
+
+        <section>
+            <form class="sub_search_form">
+                <input type="search" class="search_input" name="category_search" title="검색창" placeholder="카테고리 내 검색" />
+                <button type="submit" class="search_btn"><span class="blind">검색버튼</span></button>
+            </form>
+        </section>
+
+        <section>
+            <div class="container">
+
+                <h2 class="blind">제품리스트-검색결과</h2>
+                <div class="main_product_top">
+
+                    <div class="sort_array">
+                        <article class="select_box period">
+                            <button type="button" class="label">추천순</button>
+                            <ul class="option_list">
+                                <li class="option_item">추천순</li>
+                                <li class="option_item">인기순</li>
+                                <li class="option_item">최신순</li>
+                                <li class="option_item">높은 가격순</li>
+                                <li class="option_item">낮은 가격순</li>
+                            </ul>
+                        </article>
+
+                        <article class="select_box color left">
+                            <button type="button" class="label">색상</button>
+                            <ul class="option_list">
+                                <li class="option_item">빨강<span class="red"></span></li>
+                                <li class="option_item">주황<span class="orange"></span></li>
+                                <li class="option_item">노랑<span class="yellow"></span></li>
+                                <li class="option_item">초록<span class="green"></span></li>
+                                <li class="option_item">파랑<span class="blue"></span></li>
+                                <li class="option_item">보라<span class="purple"></span></li>
+                                <li class="option_item">흰색<span class="white"></span></li>
+                                <li class="option_item">검정<span class="black"></span></li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div class="sort_array">
+                        <label for="completed" class="box_chk_label">판매완료 포함<input type="checkbox" class="chk" name="Sales_completed" id="completed" /></label>
+    
+                        <article class="select_box period left">
+                            <button type="button" class="label">전체 기간</button>
+                            <ul class="option_list">
+                                <li class="option_item">전체 기간</li>
+                                <li class="option_item">최근 1주</li>
+                                <li class="option_item">최근 2달</li>
+                                <li class="option_item">최근 3달</li>
+                                <li class="option_item">최근 6달</li>
+                            </ul>
+                        </article>    
+                    </div>
+                    
+                </div>
+
+                <ul class="product_list" id="mainProductList_2">
+                    
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="img_box">
+                                <img src="../image/cover/cover_1.jpg" alt="표지1" />
+                                <label for="product_like_sub_1" class="product_like"><input type="checkbox" name="관심" id="product_like_sub_1" /></label>
+                            </div>
+                            <div class="text_box">
+                                <span class="user_name">작가이름</span>
+                                <p class="product_name">표지타이틀</p>
+                                <div class="product_info_num">
+                                    <p class="price"><strong>50,000</strong>원</p>
+                                    <span class="product_like_num"><span class="blind">관심수</span>10</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="img_box">
+                                <img src="../image/cover/cover_2.jpg" alt="표지2" />
+                                <label for="product_like_sub_2" class="product_like"><input type="checkbox" name="관심" id="product_like_sub_2" /></label>
+                            </div>
+                            <div class="text_box">
+                                <span class="user_name">작가이름</span>
+                                <p class="product_name">표지타이틀</p>
+                                <div class="product_info_num">
+                                    <p class="price"><strong>50,000</strong>원</p>
+                                    <span class="product_like_num"><span class="blind">관심수</span>10</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="img_box">
+                                <img src="../image/cover/cover_3.jpg" alt="표지3" />
+                                <label for="product_like_sub_3" class="product_like"><input type="checkbox" name="관심" id="product_like_sub_3" /></label>
+                            </div>
+                            <div class="text_box">
+                                <span class="user_name">작가이름</span>
+                                <p class="product_name">표지타이틀</p>
+                                <div class="product_info_num">
+                                    <p class="price"><strong>50,000</strong>원</p>
+                                    <span class="product_like_num"><span class="blind">관심수</span>10</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="img_box">
+                                <img src="../image/cover/cover_4.jpg" alt="표지4" />
+                                <label for="product_like_sub_4" class="product_like"><input type="checkbox" name="관심" id="product_like_sub_4" /></label>
+                            </div>
+                            <div class="text_box">
+                                <span class="user_name">작가이름</span>
+                                <p class="product_name">표지타이틀</p>
+                                <div class="product_info_num">
+                                    <p class="price"><strong>50,000</strong>원</p>
+                                    <span class="product_like_num"><span class="blind">관심수</span>10</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="img_box">
+                                <img src="../image/cover/cover_5.jpg" alt="표지5" />
+                                <label for="product_like_5" class="product_like"><input type="checkbox" name="관심" id="product_like_5" /></label>
+                            </div>
+                            <div class="text_box">
+                                <span class="user_name">작가이름</span>
+                                <p class="product_name">표지타이틀</p>
+                                <div class="product_info_num">
+                                    <p class="price"><strong>50,000</strong>원</p>
+                                    <span class="product_like_num"><span class="blind">관심수</span>10</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="img_box">
+                                <img src="../image/cover/cover_6.jpg" alt="표지6" />
+                                <label for="product_like_sub_6" class="product_like"><input type="checkbox" name="관심" id="product_like_sub_6" /></label>
+                            </div>
+                            <div class="text_box">
+                                <span class="user_name">작가이름</span>
+                                <p class="product_name">표지타이틀</p>
+                                <div class="product_info_num">
+                                    <p class="price"><strong>50,000</strong>원</p>
+                                    <span class="product_like_num"><span class="blind">관심수</span>10</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="img_box">
+                                <img src="../image/cover/cover_7.jpg" alt="표지7" />
+                                <label for="product_like_sub_7" class="product_like"><input type="checkbox" name="관심" id="product_like_sub_7" /></label>
+                            </div>
+                            <div class="text_box">
+                                <span class="user_name">작가이름</span>
+                                <p class="product_name">표지타이틀</p>
+                                <div class="product_info_num">
+                                    <p class="price"><strong>50,000</strong>원</p>
+                                    <span class="product_like_num"><span class="blind">관심수</span>10</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <div class="img_box">
+                                <img src="../image/cover/cover_8.jpg" alt="표지8" />
+                                <label for="product_like_sub_8" class="product_like"><input type="checkbox" name="관심" id="product_like_sub_8" /></label>
+                            </div>
+                            <div class="text_box">
+                                <span class="user_name">작가이름</span>
+                                <p class="product_name">표지타이틀</p>
+                                <div class="product_info_num">
+                                    <p class="price"><strong>50,000</strong>원</p>
+                                    <span class="product_like_num"><span class="blind">관심수</span>10</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <aside class="container quick_section">
+            <h2 class="blind">퀵메뉴</h2>
+            <ul class="quick_area">
+                <li><button type="button" class="quick_btn top_btn" onclick="topMove()"><span class="blind">맨 위로</span></button></li>
+                <li>
+                    <button type="button" class="quick_btn recently" onclick="popToggle(this)"><span class="blind">최근 본 표지</span></button>
+
+                    <article class="popup" style="display:none;">
+                        <h3 class="pop_title">최근 본 표지</h3>
+                        <button type="button" class="close_btn" onclick="popClose(this)"><span class="blind">닫기</span></button>
+                
+                        <ul class="product_list item2">
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_9.jpg" alt="표지1" />
+                                        <label for="product_like_recently_1" class="product_like"><input type="checkbox" name="관심" id="product_like_recently_1" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_11.jpg" alt="표지2" />
+                                        <label for="product_like_recently_2" class="product_like"><input type="checkbox" name="관심" id="product_like_recently_2" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_13.jpg" alt="표지3" />
+                                        <label for="product_like_recently_3" class="product_like"><input type="checkbox" name="관심" id="product_like_recently_3" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_15.jpg" alt="표지4" />
+                                        <label for="product_like_recently_4" class="product_like"><input type="checkbox" name="관심" id="product_like_recently_4" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_17.jpg" alt="표지5" />
+                                        <label for="product_like_recently_5" class="product_like"><input type="checkbox" name="관심" id="product_like_recently_5" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_19.jpg" alt="표지6" />
+                                        <label for="product_like_recently_6" class="product_like"><input type="checkbox" name="관심" id="product_like_recently_6" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="btn_area">
+                            <a href="javascript:void(0)" class="all_view_btn">전체보기</a>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <button type="button" class="quick_btn like" onclick="popToggle(this)"><span class="blind">좋아요한 표지</span></button>
+
+                    <article class="popup" style="display:none;">
+                        <h3 class="pop_title">좋아요한 표지</h3>
+                        <button type="button" class="close_btn" onclick="popClose(this)"><span class="blind">닫기</span></button>
+                
+                        <ul class="product_list item2">
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_5.jpg" alt="표지1" />
+                                        <label for="product_like_check_1" class="product_like"><input type="checkbox" name="관심" id="product_like_check_1" checked="checked" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_6.jpg" alt="표지2" />
+                                        <label for="product_like_check_2" class="product_like"><input type="checkbox" name="관심" id="product_like_check_2" checked="checked" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_8.jpg" alt="표지3" />
+                                        <label for="product_like_check_3" class="product_like"><input type="checkbox" name="관심" id="product_like_check_3" checked="checked" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_10.jpg" alt="표지4" />
+                                        <label for="product_like_check_4" class="product_like"><input type="checkbox" name="관심" id="product_like_check_4" checked="checked" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_12.jpg" alt="표지5" />
+                                        <label for="product_like_check_5" class="product_like"><input type="checkbox" name="관심" id="product_like_check_5" checked="checked" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_14.jpg" alt="표지6" />
+                                        <label for="product_like_check_6" class="product_like"><input type="checkbox" name="관심" id="product_like_check_6" checked="checked" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="btn_area">
+                            <a href="javascript:void(0)" class="all_view_btn">전체보기</a>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+        </aside>
+        
+    </main>
+
+    <footer class="footer">
+        <div class="corp_area">
+            <button type="button" class="corp_open_btn" onclick="corpToggle(this)">READY: MADE 추가정보</button>
+            <ul class="corp_li">
+                <li><a href="javascript:void(0)">사용약관</a></li>
+                <li><a href="javascript:void(0)">개인정보처리방침</a></li>
+                <li><a href="javascript:void(0)">도움말</a></li>
+                <li><a href="javascript:void(0)">문의하기</a></li>
+                <li><a href="javascript:void(0)">광고문의</a></li>
+            </ul>
+        </div>
+
+        <div class="hide_corp_area" style="display:none;">
+            <span class="txt copy">ⓒ2023 READY: MADE</span>
+            <span class="txt">사업자 등록번호: 000-00-000000</span>
+            <span class="txt">대표자명: 000</span>
+            <span class="txt">전화번호: 000-0000-0000</span>
+            <span class="txt">주소: 서울특별시 강남구 00로 00길 0F </span>
+        </div>
+    </footer>
+
+    <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="../js/sub.js"></script>
+</body>
+</html>

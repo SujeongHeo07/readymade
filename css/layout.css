@@ -1,0 +1,17 @@
+.wrap {
+    padding:122px 0 50px;
+}
+.container {
+    width:100%;
+    max-width:var(--max-width);
+    margin:0 auto;
+}
+.container.type_small {
+    max-width:792px;
+}
+
+@media all and (max-width:1240px) {
+    .container {padding:0 16px;}
+}
+
+

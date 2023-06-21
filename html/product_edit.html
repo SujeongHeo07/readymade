@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1190">
+    <meta name="description" content="READYMADE">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="READYMADE">
+    <meta property="og:description" content="READYMADE">
+    <meta property="og:url" content="http://READYMADE.com/">
+    <meta property="og:image" content="../image/common/logo.svg">
+    <title>READYMADE Product Edit</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/sub.css" />
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <script src="../js/common.js"></script>
+</head>
+
+<body>
+    <header class="header type_line">
+        <div class="container">
+
+            <div class="header_upper_wrap">
+                <h1 class="logo"><a href="index.html"><img src="../image/common/logo.svg" alt="READYMADE" /></a></h1>
+    
+                <div class="header_upper">
+                    <form class="search_box">
+                        <input type="search" name="search" title="통합검색" class="search_input" placeholder="키워드, 작가명을 검색해보세요." />
+                        <button type="submit" class="search_btn"><span class="blind">검색버튼</span></button>
+                    </form>
+    
+                    <ul class="user_assi_nav">
+                        <li><a href="javascript:void(0)" class="alarm"><span class="blind">알람</span></a></li>
+                        <li><a href="javascript:void(0)" class="cart"><span class="blind">장바구니</span></a></li>
+                        <li><a href="javascript:void(0)" class="user"><span class="blind">마이페이지</span></a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="gnb_wrapper">
+                <nav class="gnb">
+                    <ul class="depth1">
+                        <li>
+                            <a href="product_list.html">카테고리</a>
+                            <ul class="depth2">
+                                <li><a href="product_list.html">3D 아트</a></li>
+                                <li><a href="product_list.html">포토그래피</a></li>
+                                <li><a href="product_list.html">드로잉</a></li>
+                                <li><a href="product_list.html">디지털아트</a></li>
+                                <li><a href="product_list.html">타이포그래피</a></li>
+                                <li><a href="product_list.html">일러스트레이션</a></li>
+                                <li><a href="product_list.html">캐릭터</a></li>
+                                <li><a href="product_list.html">콜라주</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="product_list.html">전체</a></li>
+                        <li><a href="product_list.html">인기</a></li>
+                        <li><a href="product_list.html">신규</a></li>
+                    </ul>
+
+                    <ul class="depth1">
+                        <li><a href="javascript:void(0)">이벤트</a></li>
+                        <li><a href="javascript:void(0)">고객지원</a></li>
+                    </ul>
+                </nav>
+    
+                <div class="user_assi_box">
+                    <p class="first_user_guide">처음이신가요? <a href="javascript:void(0)">이용가이드</a></p>
+                    <a href="product_edit.html" class="cover_edit_btn">표지등록</a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="wrap">
+
+        <div class="edit_process">
+            <div class="container">
+
+                <ul class="process_li">
+                    <li><a href="javascript:void(0)" onclick="stepMoveScroll(1)"><span class="step">STEP1</span> 기본정보 입력</a></li>
+                    <li><a href="javascript:void(0)" onclick="stepMoveScroll(2)"><span class="step">STEP2</span> 작업안내 입력</a></li>
+                    <li><a href="javascript:void(0)" onclick="stepMoveScroll(3)"><span class="step">STEP3</span> 표지상세 입력</a></li>
+                    <li><a href="javascript:void(0)" onclick="stepMoveScroll(4)"><span class="step">STEP4</span> 취소·환불 규정</a></li>
+                </ul>
+
+                <div class="btn_box">
+                    <button type="button" class="btn" onclick="previewView()">미리보기</button>
+                    <button type="button" class="btn main">임시저장</button>
+                </div>
+
+            </div>
+        </div>
+
+        <form class="">
+            <section class="product_edit step_1" id="step_1">
+                <div class="container">
+    
+                    <h2 class="h2_title"><span class="step">STEP1</span> 기본정보 입력</h2>
+                    
+                    <ul class="product_form_list">
+                        <li>
+                            <div class="tit_box mb20">
+                                <h3 class="tit">상품 이미지 등록</h3>
+                                <button type="button" class="desc_view_btn" onclick="descPopOpen(this)"><span class="blind">설명보기</span></button>
+                                <div class="desc_pop" style="display:none;">
+                                    <strong class="text">상품 이미지 등록</strong>
+                                    <span class="txt">권장 사이즈 612*390px<br/>
+                                        썸네일 및 상세페이지 상단에 들어갈 이미지를 선택해주세요.<br/>
+                                        우측 상단을 클릭해 섬네일을 설정 가능합니다. </span>
+                                </div>
+                            </div>
+                            <label for="file_upload" class="thumbnail_upload">
+                                <span class="blind">썸네일 등록</span>
+                                <input type="file" name="thumbnail_image_upload" id="file_upload" onchange="readFile(this)"/>
+                                <img src="#" alt="thumbnail_img" id="thumbnailImg" />
+                            </label>
+                        </li>
+                        <li>
+                            <div class="tit_box">
+                                <h3 class="tit">표지제목</h3>
+                                <button type="button" class="desc_view_btn" onclick="descPopOpen(this)"><span class="blind">설명보기</span></button>
+                                <div class="desc_pop" style="display:none;">
+                                    <strong class="text">표지제목</strong>
+                                    <span class="txt">20자 이내로 표지 제목을 입력해주세요.</span>
+                                </div>
+                            </div>
+                            <p class="desc">표지제목을 입력해주세요</p>
+                            <label for="cover_title" class="input_area">
+                                <span class="blind">표지제목</span>
+                                <input type="text" name="표지제목" class="text_input" id="cover_title" maxlength="19" onkeyup="textLength(this)"/>
+                                <span class="txt" id="text_length">0/20</span>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="tit_box">
+                                <h3 class="tit">표지가격</h3>
+                                <button type="button" class="desc_view_btn" onclick="descPopOpen(this)"><span class="blind">설명보기</span></button>
+                                <div class="desc_pop" style="display:none;">
+                                    <strong class="text">표지가격</strong>
+                                    <span class="txt">표지가격을 입력해주세요.</span>
+                                </div>
+                            </div>
+                            <p class="desc">표지가격을 입력해주세요</p>
+                            <label for="cover_price" class="input_area">
+                                <span class="blind">표지가격</span>
+                                <input type="number" name="표지가격" class="text_input" id="cover_price" />
+                                <span class="txt">원</span>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="tit_box">
+                                <h3 class="tit">무료 수정횟수</h3>
+                                <button type="button" class="desc_view_btn" onclick="descPopOpen(this)"><span class="blind">설명보기</span></button>
+                                <div class="desc_pop" style="display:none;">
+                                    <strong class="text">무료 수정횟수</strong>
+                                    <span class="txt">표지 작업시 무료로 수정 가능한 횟수를 입력해주세요.</span>
+                                </div>
+                            </div>
+                            <p class="desc">무료 수정 가능한 횟수를 입력해주세요</p>
+                            <label for="cover_edit_length" class="input_area">
+                                <span class="blind">무료 수정횟수</span>
+                                <input type="number" name="무료 수정횟수" class="text_input" id="cover_edit_length" />
+                                <span class="txt">회</span>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="tit_box">
+                                <h3 class="tit">유료 수정가격</h3>
+                                <button type="button" class="desc_view_btn" onclick="descPopOpen(this)"><span class="blind">설명보기</span></button>
+                                <div class="desc_pop" style="display:none;">
+                                    <strong class="text">유료 수정가격</strong>
+                                    <span class="txt">구매자가 무료 수정횟수를 모두 사용시 <br/>
+                                        수정 1회당 요구되는 가격을 입력해주세요.<br/>
+                                        *구매자와 협의 후 변경 가능합니다</span>
+                                </div>
+                            </div>
+                            <p class="desc">수정 1회당 가격을 입력해주세요</p>
+                            <label for="cover_edit_price" class="input_area">
+                                <span class="blind">수정가격</span>
+                                <input type="number" name="수정가격" class="text_input" id="cover_edit_price" />
+                                <span class="txt">원</span>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="tit_box">
+                                <h3 class="tit">작업기간</h3>
+                                <button type="button" class="desc_view_btn" onclick="descPopOpen(this)"><span class="blind">설명보기</span></button>
+                                <div class="desc_pop" style="display:none;">
+                                    <strong class="text">작업기간</strong>
+                                    <span class="txt">기본작업시 걸리는 작업기간을 입력해주세요.</span>
+                                </div>
+                            </div>
+                            <p class="desc">작업기간을 입력해주세요</p>
+                            <label for="work_date" class="input_area">
+                                <span class="blind">작업기간</span>
+                                <input type="number" name="작업기간" class="text_input" id="work_date" />
+                                <span class="txt">일</span>
+                            </label>
+                        </li>
+                        <li>
+                            <div class="tit_box">
+                                <h3 class="tit">카테고리</h3>
+                                <button type="button" class="desc_view_btn" onclick="descPopOpen(this)"><span class="blind">설명보기</span></button>
+                                <div class="desc_pop" style="display:none;">
+                                    <strong class="text">카테고리</strong>
+                                    <span class="txt">선택하신 카테고리에 따라 표지의 노출영역이 달라집니다.<br/>
+                                        표지와 가장일치하는 카테고리를 선택해주세요. (최대 3개)</span>
+                                </div>
+                            </div>
+                            <p class="desc">카테고리를 선택해주세요 (최대 3개)</p>
+                            <ul class="categories_option_li">
+                                <li>
+                                    <label for="categories_1"><input type="checkbox" name="카테고리" class="chk" id="categories_1" />3D 아트</label>
+                                </li>
+                                <li>
+                                    <label for="categories_2"><input type="checkbox" name="카테고리" class="chk" id="categories_2" />드로잉</label>
+                                </li>
+                                <li>
+                                    <label for="categories_3"><input type="checkbox" name="카테고리" class="chk" id="categories_3" />포토그래피</label>
+                                </li>
+                                <li>
+                                    <label for="categories_4"><input type="checkbox" name="카테고리" class="chk" id="categories_4" />캐릭터</label>
+                                </li>
+                                <li>
+                                    <label for="categories_5"><input type="checkbox" name="카테고리" class="chk" id="categories_5" />타이포그래피</label>
+                                </li>
+                                <li>
+                                    <label for="categories_6"><input type="checkbox" name="카테고리" class="chk" id="categories_6" />콜라주</label>
+                                </li>
+                                <li>
+                                    <label for="categories_7"><input type="checkbox" name="카테고리" class="chk" id="categories_7" />일러스트레이션</label>
+                                </li>
+                                <li>
+                                    <label for="categories_8"><input type="checkbox" name="카테고리" class="chk" id="categories_8" />기하학</label>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="tit_box">
+                                <h3 class="tit">검색 키워드</h3>
+                                <button type="button" class="desc_view_btn" onclick="descPopOpen(this)"><span class="blind">설명보기</span></button>
+                                <div class="desc_pop" style="display:none;">
+                                    <strong class="text">검색키워드</strong>
+                                    <span class="txt">표지를 검색하는데 도움이 되도록 추가하는 키워드입니다.<br/>
+                                        연관성이 없는 키워드를 입력시 판매에 제한을 받을 수 있습니다.<br/>
+                                        (최대 5개)</span>
+                                </div>
+                            </div>
+                            <p class="desc">키워드를 입력하고 탭 또는 엔터키를 눌러주세요 (최대 8개)</p>
+                            <div class="keyword_input">
+                                <span id="keywordContainer"></span>
+                                <input type="text" name="keyword_list_input" id="keywordTextarea" onkeydown="keywordInput()" placeholder="키워드를 입력하고 탭 또는 엔터키를 눌러주세요 (최대 8개)" />
+                            </div>
+                        </li>
+                        <li>
+                            <div class="tit_box mb20">
+                                <h3 class="tit">추가옵션 편집</h3>
+                                <button type="button" class="desc_view_btn" onclick="descPopOpen(this)"><span class="blind">설명보기</span></button>
+                                <div class="desc_pop" style="display:none;">
+                                    <strong class="text">추가옵션 편집</strong>
+                                    <span class="txt">추가옵션을 설정할 수 있습니다.<br/>
+                                        추가된 옵션에 마우스를 올리면 수정/ 삭제가 가능합니다.</span>
+                                </div>
+                            </div>
+                            <div class="option_area">
+
+                                <ul class="option_tabs">
+                                    <li><button type="button" class="active" onclick="optionTabs(this, '1')">표지</button></li>
+                                    <li><button type="button" onclick="optionTabs(this, '2')">내지</button></li>
+                                    <li><button type="button" onclick="optionTabs(this, '3')">기타</button></li>
+                                </ul>
+                                
+                                <div class="option_list_area">
+                                    <ul class="option_list_box optionContent_1">
+                                        <li class="option_label">
+                                            <div class="option_txt">
+                                                <input type="text" class="name" name="option_name_edit" title="추가옵션" maxlength="25" value="판형 변경 (A5외 모든 사이즈)" readonly="readonly" />
+                                            </div>
+                                            <input type="text" class="price" name="option_price_edit" title="추가옵션금액" value="+5000" readonly="readonly" />
+                                            <div class="btn_box">
+                                                <button type="button" class="btn modify" onclick="optionEdit(this)">수정</button>
+                                                <button type="button" class="btn cancle" onclick="optionCancle(this)">삭제</button>
+                                                <button type="button" class="btn main storage" onclick="optionStorage(this)" style="display:none;">저장</button>
+                                            </div>
+                                        </li>
+                                        <li class="option_label">
+                                            <div class="option_txt">
+                                                <input type="text" class="name" name="option_name_edit" title="추가옵션" maxlength="25" value="하드커버" readonly="readonly" />
+                                            </div>
+                                            <input type="text" class="price" name="option_price_edit" title="추가옵션금액" value="+5000" readonly="readonly" />
+                                            <div class="btn_box">
+                                                <button type="button" class="btn modify" onclick="optionEdit(this)">수정</button>
+                                                <button type="button" class="btn cancle" onclick="optionCancle(this)">삭제</button>
+                                                <button type="button" class="btn main storage" onclick="optionStorage(this)" style="display:none;">저장</button>
+                                            </div>
+                                        </li>
+                                        <li class="option_label">
+                                            <div class="option_txt">
+                                                <input type="text" class="name" name="option_name_edit" title="추가옵션" maxlength="25" value="단색 책날개" readonly="readonly" />
+                                            </div>
+                                            <input type="text" class="price" name="option_price_edit" title="추가옵션금액" value="+5000" readonly="readonly" />
+                                            <div class="btn_box">
+                                                <button type="button" class="btn modify" onclick="optionEdit(this)">수정</button>
+                                                <button type="button" class="btn cancle" onclick="optionCancle(this)">삭제</button>
+                                                <button type="button" class="btn main storage" onclick="optionStorage(this)" style="display:none;">저장</button>
+                                            </div>
+                                        </li>
+                                        <li class="option_label">
+                                            <div class="option_txt">
+                                                <input type="text" class="name" name="option_name_edit" title="추가옵션" maxlength="25" value="디자인 책날개" readonly="readonly" />
+                                            </div>
+                                            <input type="text" class="price" name="option_price_edit" title="추가옵션금액" value="+8000" readonly="readonly" />
+                                            <div class="btn_box">
+                                                <button type="button" class="btn modify" onclick="optionEdit(this)">수정</button>
+                                                <button type="button" class="btn cancle" onclick="optionCancle(this)">삭제</button>
+                                                <button type="button" class="btn main storage" onclick="optionStorage(this)" style="display:none;">저장</button>
+                                            </div>
+                                        </li>
+                                        <li class="option_label">
+                                            <div class="option_txt">
+                                                <input type="text" class="name" name="option_name_edit" title="추가옵션" maxlength="25" value="후가공 (박, 형압)" readonly="readonly" />
+                                            </div>
+                                            <input type="text" class="price" name="option_price_edit" title="추가옵션금액" value="+5000" readonly="readonly" />
+                                            <div class="btn_box">
+                                                <button type="button" class="btn modify" onclick="optionEdit(this)">수정</button>
+                                                <button type="button" class="btn cancle" onclick="optionCancle(this)">삭제</button>
+                                                <button type="button" class="btn main storage" onclick="optionStorage(this)" style="display:none;">저장</button>
+                                            </div>
+                                        </li>
+                                        <li class="option_label option_label_add">
+                                            <input type="text" name="add_option_name" class="name" title="옵션명" maxlength="25" placeholder="옵션명을 입력해주세요(25자이내)" />
+                                            <input type="number" name="add_option_price" class="price" title="옵션가격" placeholder="가격입력" />
+                                            <div class="btn_box">
+                                                <button type="button" class="btn main" onclick="addOption(this)">추가</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="option_list_box optionContent_2" style="display:none;">
+                                        <li class="option_label option_label_add">
+                                            <input type="text" name="add_option_name" class="name" title="옵션명" maxlength="25" placeholder="옵션명을 입력해주세요(25자이내)" />
+                                            <input type="number" name="add_option_price" class="price" title="옵션가격" placeholder="가격입력" />
+                                            <div class="btn_box">
+                                                <button type="button" class="btn main" onclick="addOption(this)">추가</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="option_list_box optionContent_3" style="display:none;">
+                                        <li class="option_label option_label_add">
+                                            <input type="text" name="add_option_name" class="name" title="옵션명" maxlength="25" placeholder="옵션명을 입력해주세요(25자이내)" />
+                                            <input type="number" name="add_option_price" class="price" title="옵션가격" placeholder="가격입력" />
+                                            <div class="btn_box">
+                                                <button type="button" class="btn main" onclick="addOption(this)">추가</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>        
+                        </li>
+                    </ul>
+                    
+                </div>
+            </section>
+
+            <section class="product_edit step_2" id="step_2">
+                <div class="container">
+    
+                    <h2 class="h2_title clear"><span class="step">STEP2</span> 작업안내 입력<button type="button" class="btn" id="templateBringing">기본 템블릿 불러오기</button></h2>
+
+
+                    <textarea name="text" class="editor" id="editor1"></textarea>
+                </div>
+            </section>
+
+            <section class="product_edit step_3" id="step_3">
+                <div class="container">
+    
+                    <h2 class="h2_title"><span class="step">STEP3</span> 표지상세 입력</h2>
+
+                    <textarea name="text" class="editor" id="editor2"></textarea>
+                </div>
+            </section>
+
+            <section class="product_edit step_4" id="step_4">
+                <div class="container">
+    
+                    <h2 class="h2_title"><span class="step">STEP4</span> 취소 및 환불 규정<span class="text">취소 및 환불규정은 관련 법령에 따라 일괄 적용되어 수정이 불가합니다.</span></h2>
+
+                    <div class="text_li_area">
+                        01. 디자이너와 의뢰인 간의 상호 협의 후 청약철회가 가능합니다. <br/><br/>
+
+                        02. 디자이너의 귀책사유로 디자인작업을 시작하지 않았거나 혹은 이에 준하는 보편적인 관점에서 심각하게 잘못 이행한 경우 결제 금액 전체 환불이 가능합니다. <br/><br/>
+
+                        03. 디자이너가 작업 기간 동안 지정된 서비스를 제공하지 못할 것이 확실한 경우 지급받은 서비스 비용을 일할 계산하여 작업물 개수와 작업 기간 일수만큼 공제하고 잔여 금액을 환불합니다.<br/><br/>
+                        
+                        04. 서비스 받은 항목을 공제하여 환불하며, 공제 비용은 정가 처리됩니다. <br/>
+                        가. 소비자 피해 보상 규정에 의거하여 작업물 원본의 멸실 및 작업 기간 미이행 및 이에 상응하는 디자이너 책임으로 인한 피해 발생 시, 전액 환불 <br/>
+                        나. 시안 작업 진행된 상품 차감 환불 <br/>
+                        ⓐ. '디자인'에 대한 금액이 서비스 내 별도 기재가 되지 않았거나, 디자인 상품 패키지 내 수정 횟수가 1회(1회 포함) 이상인 서비스 상품의 시안 or 샘플이 제공된 경우 <br/>
+                        → 구매금액의 10% 환불(디자인 비용이 별도 기재되어 있는 경우, 해당금액 차감 후 환불) <br/>
+                        ※ 시안 제공 및 수정이 추가로 이뤄진 경우 환불 금액내 수정 횟수에 따라 분할하여 환불. <br/><br/>
+
+                        05. 주문 제작 상품 등 서비스 받은 항목이 없으며, 결제 후 1일 이내 작업이 진행되기 전 시점은 전액 환불 가능. <br/><br/>
+
+                        06. 다만, 환불이 불가능한 서비스에 대한 사실을 표시사항에 포함한 경우에는 의뢰인의 환불요청이 제한될 수 있습니다. <br/>
+                        가. 고객의 요청에 따라 개별적으로 주문 제작되는 재판매가 불가능한 경우(인쇄, 이니셜 각인, 사이즈 맞춤 등) <br/>
+                        ⓐ. 주문 제작 상품 특성상 제작(인쇄 등) 진행된 경우. <br/>
+                        ⓑ. 인쇄 색상의 차이 : 모니터의 종류에 따라 색상의 차이가 발생하며,인쇄 시마다 합판 인쇄 방법의 특성상 색상 표현의 오차가 발생함. <br/>
+                        ⓒ. 디자인 서비스이며 수정 횟수가 존재하지 않았던 상품일 경우 시안 수령 후 환불 불가<br/>
+                    </div>
+
+                    <div class="bottom_btns_box">
+                        <button type="button" class="btn" onclick="previewView()">미리보기</button>
+                        <button type="button" class="btn">임시저장</button>
+                        <button type="button" class="btn main" onclick="location.href='product_view.html'">표지등록</button>
+                    </div>
+                </div>
+
+            </section>
+
+        </form>
+
+
+        <aside class="container quick_section">
+            <h2 class="blind">퀵메뉴</h2>
+            <ul class="quick_area">
+                <li><button type="button" class="quick_btn top_btn" onclick="topMove()"><span class="blind">맨 위로</span></button></li>
+                <li>
+                    <button type="button" class="quick_btn recently" onclick="popToggle(this)"><span class="blind">최근 본 표지</span></button>
+
+                    <article class="popup" style="display:none;">
+                        <h3 class="pop_title">최근 본 표지</h3>
+                        <button type="button" class="close_btn" onclick="popClose(this)"><span class="blind">닫기</span></button>
+                
+                        <ul class="product_list item2">
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_9.jpg" alt="표지1" />
+                                        <label for="product_like_recently_1" class="product_like"><input type="checkbox" name="관심" id="product_like_recently_1" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_11.jpg" alt="표지2" />
+                                        <label for="product_like_recently_2" class="product_like"><input type="checkbox" name="관심" id="product_like_recently_2" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_13.jpg" alt="표지3" />
+                                        <label for="product_like_recently_3" class="product_like"><input type="checkbox" name="관심" id="product_like_recently_3" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_15.jpg" alt="표지4" />
+                                        <label for="product_like_recently_4" class="product_like"><input type="checkbox" name="관심" id="product_like_recently_4" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_17.jpg" alt="표지5" />
+                                        <label for="product_like_recently_5" class="product_like"><input type="checkbox" name="관심" id="product_like_recently_5" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_19.jpg" alt="표지6" />
+                                        <label for="product_like_recently_6" class="product_like"><input type="checkbox" name="관심" id="product_like_recently_6" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="btn_area">
+                            <a href="javascript:void(0)" class="all_view_btn">전체보기</a>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <button type="button" class="quick_btn like" onclick="popToggle(this)"><span class="blind">좋아요한 표지</span></button>
+
+                    <article class="popup" style="display:none;">
+                        <h3 class="pop_title">좋아요한 표지</h3>
+                        <button type="button" class="close_btn" onclick="popClose(this)"><span class="blind">닫기</span></button>
+                
+                        <ul class="product_list item2">
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_5.jpg" alt="표지1" />
+                                        <label for="product_like_check_1" class="product_like"><input type="checkbox" name="관심" id="product_like_check_1" checked="checked" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_6.jpg" alt="표지2" />
+                                        <label for="product_like_check_2" class="product_like"><input type="checkbox" name="관심" id="product_like_check_2" checked="checked" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_8.jpg" alt="표지3" />
+                                        <label for="product_like_check_3" class="product_like"><input type="checkbox" name="관심" id="product_like_check_3" checked="checked" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_10.jpg" alt="표지4" />
+                                        <label for="product_like_check_4" class="product_like"><input type="checkbox" name="관심" id="product_like_check_4" checked="checked" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_12.jpg" alt="표지5" />
+                                        <label for="product_like_check_5" class="product_like"><input type="checkbox" name="관심" id="product_like_check_5" checked="checked" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="product_view.html">
+                                    <div class="img_box">
+                                        <img src="../image/cover/cover_14.jpg" alt="표지6" />
+                                        <label for="product_like_check_6" class="product_like"><input type="checkbox" name="관심" id="product_like_check_6" checked="checked" /></label>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="btn_area">
+                            <a href="javascript:void(0)" class="all_view_btn">전체보기</a>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+        </aside>
+        
+    </main>
+
+    <div id="mask" style="display:none;">
+        <div class="preview_wrap">
+            <div class="preview_pop">
+                <h2 class="preview_tit">미리보기 화면</h2>
+
+                <div class="preview_contents">
+                    <section class="product_view_top">
+                        <div class="container">
+
+                            <h2 class="blind">제품 상세 - 제품 정보</h2>
+                            <div class="product_view_img"><img src="../image/cover/cover_view_1.jpg" alt="책표지1"/></div>
+
+                            <form class="product_info_area">
+                                <div class="product_info_box">
+                                    <span class="writer_name"><span class="blind">작가이름</span>김자까</span>
+                                    <h3 class="product_name"><span class="blind">제품명</span>발화점</h3>
+                                    <div class="basic_info">
+                                        <p class="price"><strong>55,000</strong>원</p>
+                                        <div class="add_info">
+                                            <div class="work_num">
+                                                <span>무료수정</span>
+                                                <span class="num">2회</span>
+                                            </div>
+                                            <div class="work_num">
+                                                <span>작업기간</span>
+                                                <span class="num">7일</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="option_area">
+                                    <p class="title">추가옵션</p>
+
+                                    <ul class="option_tabs">
+                                        <li><button type="button" class="active" onclick="optionTabs(this, '1')">표지</button></li>
+                                        <li><button type="button" onclick="optionTabs(this, '2')">내지</button></li>
+                                        <li><button type="button" onclick="optionTabs(this, '3')">기타</button></li>
+                                    </ul>
+                                    
+                                    <div class="option_list_area">
+                                        <ul class="option_list_box optionContent_1">
+                                            <li>
+                                                <label for="option_1" class="option_label">
+                                                    <div class="option_txt">
+                                                        <input type="checkbox" class="chk" name="판형변경" id="option_1" disabled="disabled"/>
+                                                        <p class="txt">판형 변경(A5외 모든 사이즈)</p>
+                                                    </div>
+                                                    <span class="price">5000</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="option_2" class="option_label">
+                                                    <div class="option_txt">
+                                                        <input type="checkbox" class="chk" name="하드커버" id="option_2" disabled="disabled"/>
+                                                        <p class="txt">하드커버</p>
+                                                    </div>
+                                                    <span class="price">8000</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="option_3" class="option_label">
+                                                    <div class="option_txt">
+                                                        <input type="checkbox" class="chk" name="단색 책날개" id="option_3" disabled="disabled"/>
+                                                        <p class="txt">단색 책날개</p>
+                                                    </div>
+                                                    <span class="price">5000</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="option_4" class="option_label">
+                                                    <div class="option_txt">
+                                                        <input type="checkbox" class="chk" name="디자인 책날개" id="option_4" disabled="disabled"/>
+                                                        <p class="txt">디자인 책날개</p>
+                                                    </div>
+                                                    <span class="price">5000</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="option_5" class="option_label">
+                                                    <div class="option_txt">
+                                                        <input type="checkbox" class="chk" name="후가공" id="option_5" disabled="disabled"/>
+                                                        <p class="txt">후가공(박,형압)</p>
+                                                    </div>
+                                                    <span class="price">5000</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+
+                                        <ul class="option_list_box optionContent_2" style="display:none;">
+                                            <li>
+                                                <label for="option_6" class="option_label">
+                                                    <div class="option_txt">
+                                                        <input type="checkbox" class="chk" name="약표제지" id="option_6" disabled="disabled"/>
+                                                        <p class="txt">약표제지</p>
+                                                    </div>
+                                                    <span class="price">3000</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="option_7" class="option_label">
+                                                    <div class="option_txt">
+                                                        <input type="checkbox" class="chk" name="표제지" id="option_7" disabled="disabled" />
+                                                        <p class="txt">표제지</p>
+                                                    </div>
+                                                    <span class="price">3000</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="option_8" class="option_label">
+                                                    <div class="option_txt">
+                                                        <input type="checkbox" class="chk" name="목차" id="option_8" disabled="disabled" />
+                                                        <p class="txt">목차</p>
+                                                    </div>
+                                                    <span class="price">8000</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="option_9" class="option_label">
+                                                    <div class="option_txt">
+                                                        <input type="checkbox" class="chk" name="장도비라" id="option_9" disabled="disabled" />
+                                                        <p class="txt">장도비라</p>
+                                                    </div>
+                                                    <span class="price">8000</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="option_10" class="option_label">
+                                                    <div class="option_txt">
+                                                        <input type="checkbox" class="chk" name="판권지" id="option_10" disabled="disabled"/>
+                                                        <p class="txt">판권지</p>
+                                                    </div>
+                                                    <span class="price">5000</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+
+                                        <ul class="option_list_box optionContent_3" style="display:none;">
+                                            <li>
+                                                <label for="option_11" class="option_label">
+                                                    <div class="option_txt">
+                                                        <input type="checkbox" class="chk" name="목업 제작" id="option_11" disabled="disabled"/>
+                                                        <p class="txt">목업 제작</p>
+                                                    </div>
+                                                    <span class="price">5000</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="option_12" class="option_label">
+                                                    <div class="option_txt">
+                                                        <input type="checkbox" class="chk" name="엽서 제작" id="option_12" disabled="disabled"/>
+                                                        <p class="txt">엽서 제작</p>
+                                                    </div>
+                                                    <span class="price">8000</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="option_13" class="option_label">
+                                                    <div class="option_txt">
+                                                        <input type="checkbox" class="chk" name="책갈피 제작" id="option_13" disabled="disabled"/>
+                                                        <p class="txt">책갈피 제작</p>
+                                                    </div>
+                                                    <span class="price">5000</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="option_14" class="option_label">
+                                                    <div class="option_txt">
+                                                        <input type="checkbox" class="chk" name="포토폴리오 비공개" id="option_14" disabled="disabled"/>
+                                                        <p class="txt">포토폴리오 비공개</p>
+                                                    </div>
+                                                    <span class="price">5000</span>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label for="option_15" class="option_label">
+                                                    <div class="option_txt">
+                                                        <input type="checkbox" class="chk" name="수정3회" id="option_15" disabled="disabled" />
+                                                        <p class="txt">수정 3회부터</p>
+                                                    </div>
+                                                    <span class="price">5000</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="product_buy_btn">
+                                        <label for="product_like" class="like_chk"><input type="checkbox" class="blind" name="물건 좋아요 등록" id="product_like" /><span class="count">0</span></label>
+                                        <button type="button" class="btn main">주문하기</button>
+                                        <button type="button" class="btn gray">장바구니</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="container">
+                            
+                            <h2 class="blind">작가 소개</h2>
+                            <div class="writer_info">
+                                <a href="javascript:void(0)" class="img_box"><img src="../image/sub/writer_1.png" alt="김작가 프로필" /></a>
+                                <span class="name">김자까</span>
+                                <p class="desc">소개글 영역/다양한 콘텐츠 디자인을 어우르는 1인 전문 디자인 스튜디오입니다.</p>
+                                <div class="btn_box">
+                                    <button type="button" class="btn">팔로우</button>
+                                    <button type="button" class="btn">문의하기</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="container type_small">
+
+                            <ul class="tabs_navi">
+                                <li><button type="button" class="active" >작업안내</button></li>
+                                <li><button type="button">표지상세</button></li>
+                                <li><button type="button">취소·환불</button></li>
+                                <li><button type="button">구매후기</button></li>
+                            </ul>
+
+                            <h2 class="h2_title">작업안내</h2>
+                            <ol class="guidance_list">
+                                <li>01. 진행 순서: <strong>주문서 작성 - 디자인 상담&일정 조율 - 견적 안내 - 결제 확인 - 시안 작업&수정 - 최종 파일 전송</strong></li>
+                                <li>02. 기본 작업 기간: <strong>~7일</strong></li>
+                                <li>03. 무료 수정횟수: <strong>2회까지 무료,</strong> 그 이후부터는 1회 당 추가금(+5000원)이 부가됩니다.</li>
+                                <li>04. 기본 사양: <strong>A5/ 무선제본 / CMYK/ 300dpi</strong></li>
+                                <li>05. 기본 제공파일: <strong>PSD/ JPEG/ PNG 중 한 가지 선택</strong> (PSD은 레이어 병합됨)</li>
+                                <li>06. 책의 상세사이즈는 인쇄소에 맞게 직접 계산해 말씀해주세요. 잘못된 정보로 인한 파본은 책임지지 않습니다.</li>
+                                <li>07. 표지는 상업적 이용이 가능한 유/무료 이미지 소스를 사용합니다.</li>
+                                <li>08. 결제 안내 후 48시간 이내 미입금시 주문 취소됩니다.</li>
+                                <li>09. 결제 후 바로 작업에 들어가므로 환불은 불가합니다.</li>
+                                <li>10. 모든 작업물의 저작권은 (김자까)에게 있으며, 수정 및 변형을 금지합니다.</li>
+                                <li>11. 모든 작업물은 (김자까)의 포토폴리오로 이용될 수 있습니다. (비공개 요청시 추가금)</li>
+                                <li>12. 인쇄소에 따라 색감차이가 있을 수 있으며 이는 환불 대상이 아닙니다.</li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="container type_small">
+
+                            <ul class="tabs_navi top">
+                                <li><button type="button">작업안내</button></li>
+                                <li><button type="button" class="active">표지상세</button></li>
+                                <li><button type="button">취소·환불</button></li>
+                                <li><button type="button">구매후기</button></li>
+                            </ul>
+
+                            <h2 class="h2_title">표지상세</h2>
+                            <div class="product_infomation_area">
+                                <img src="../image/cover/cover_view_1.jpg" alt="커버디자인1" />
+                                <img src="../image/cover/cover_view_2.jpg" alt="커버디자인2" />
+                                <p>발화점/A5/50,000<br/><br/>한문/국문 제목 추천, 문구 수정 가능</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section>
+                        <div class="container type_small">
+
+                            <ul class="tabs_navi top">
+                                <li><button type="button">작업안내</button></li>
+                                <li><button type="button">표지상세</button></li>
+                                <li><button type="button" class="active">취소·환불</button></li>
+                                <li><button type="button">구매후기</button></li>
+                            </ul>
+
+                            <h2 class="h2_title">취소 및 환불 규정</h2>
+                            <ol class="guidance_list">
+                                <li>01. 디자이너와 의뢰인 간의 상호 협의 후 청약철회가 가능합니다. </li>
+                                <li>02. 디자이너의 귀책사유로 디자인작업을 시작하지 않았거나 혹은 이에 준하는 보편적인 관점에서 심각하게 잘못 이행한 경우 결제 금액 전체 환불이 가능합니다. </li>
+                                <li>03. 디자이너가 작업 기간 동안 지정된 서비스를 제공하지 못할 것이 확실한 경우 지급받은 서비스 비용을 일할 계산하여 작업물 개수와 작업 기간 일수만큼 공제하고 잔여 금액을 환불합니다.</li>
+                                <li>
+                                    04. 서비스 받은 항목을 공제하여 환불하며, 공제 비용은 정가 처리됩니다.
+                                    <br/>가. 소비자 피해 보상 규정에 의거하여 작업물 원본의 멸실 및 작업 기간 미이행 및 이에 상응하는 디자이너 책임으로 인한 피해 발생 시, 전액 환불
+                                    <br/>나. 시안 작업 진행된 상품 차감 환불 
+                                    <br/>ⓐ. '디자인'에 대한 금액이 서비스 내 별도 기재가 되지 않았거나, 디자인 상품 패키지 내 수정 횟수가 1회(1회 포함) 이상인 서비스 상품의 시안 or 샘플이 제공된 경우 
+                                    <br/>→ 구매금액의 10% 환불(디자인 비용이 별도 기재되어 있는 경우, 해당금액 차감 후 환불)
+                                    <br/>※ 시안 제공 및 수정이 추가로 이뤄진 경우 환불 금액내 수정 횟수에 따라 분할하여 환불. 
+                                </li>
+                                <li>05. 주문 제작 상품 등 서비스 받은 항목이 없으며, 결제 후 1일 이내 작업이 진행되기 전 시점은 전액 환불 가능. </li>
+                                <li>
+                                    06. 다만, 환불이 불가능한 서비스에 대한 사실을 표시사항에 포함한 경우에는 의뢰인의 환불요청이 제한될 수 있습니다. 
+                                    <br/>가. 고객의 요청에 따라 개별적으로 주문 제작되는 재판매가 불가능한 경우(인쇄, 이니셜 각인, 사이즈 맞춤 등) 
+                                    <br/>ⓐ. 주문 제작 상품 특성상 제작(인쇄 등) 진행된 경우. 
+                                    <br/>ⓑ. 인쇄 색상의 차이 : 모니터의 종류에 따라 색상의 차이가 발생하며,인쇄 시마다 합판 인쇄 방법의 특성상 색상 표현의 오차가 발생함. 
+                                    <br/>ⓒ. 디자인 서비스이며 수정 횟수가 존재하지 않았던 상품일 경우 시안 수령 후 환불 불가
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+
+            <button type="button" class="close_btn" onclick="previewClose()">닫기</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="corp_area">
+            <button type="button" class="corp_open_btn" onclick="corpToggle(this)">READY: MADE 추가정보</button>
+            <ul class="corp_li">
+                <li><a href="javascript:void(0)">사용약관</a></li>
+                <li><a href="javascript:void(0)">개인정보처리방침</a></li>
+                <li><a href="javascript:void(0)">도움말</a></li>
+                <li><a href="javascript:void(0)">문의하기</a></li>
+                <li><a href="javascript:void(0)">광고문의</a></li>
+            </ul>
+        </div>
+
+        <div class="hide_corp_area" style="display:none;">
+            <span class="txt copy">ⓒ2023 READY: MADE</span>
+            <span class="txt">사업자 등록번호: 000-00-000000</span>
+            <span class="txt">대표자명: 000</span>
+            <span class="txt">전화번호: 000-0000-0000</span>
+            <span class="txt">주소: 서울특별시 강남구 00로 00길 0F </span>
+        </div>
+    </footer>
+
+    <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="../js/sub.js"></script>
+    <script src="../js/ckeditor5/build/ckeditor.js"></script>
+    <script type="text/javascript">
+        // editor 
+        ClassicEditor
+            .create(document.querySelector("#editor1"))
+            .then(editor => {
+                const textLines = [
+                    "01. 진행 순서: 주문서 작성 - 디자인 상담&일정 조율 - 견적 안내 - 결제 확인 - 시안 작업&수정 - 최종 파일 전송",
+                    "02. 기본 작업 기간:",
+                    "03. 무료 수정횟수:",
+                    "04. 기본 사양: A5/ 무선제본 / CMYK/ 300dpi",
+                    "05. 기본 제공파일: PSD/ JPEG/ PNG 중 한 가지 선택 (PSD은 레이어 병합됨)",
+                    "06. 책의 상세사이즈는 인쇄소에 맞게 직접 계산해 말씀해주세요. 잘못된 정보로 인한 파본은 책임지지 않습니다.",
+                    "07. 표지는 상업적 이용이 가능한 유/무료 이미지 소스를 사용합니다.",
+                    "08. 결제 안내 후 48시간 이내 미입금시 주문 취소됩니다.",
+                    "09. 결제 후 바로 작업에 들어가므로 환불은 불가합니다.",
+                    "10. 모든 작업물의 저작권은 (김자까)에게 있으며, 수정 및 변형을 금지합니다.",
+                    "11. 모든 작업물은 (김자까)의 포토폴리오로 이용될 수 있습니다. (비공개 요청시 추가금)",
+                    "12. 인쇄소에 따라 색감차이가 있을 수 있으며 이는 환불 대상이 아닙니다."
+                ];
+
+                const textToAdd = textLines.join("<br/><br/>");
+                editor.setData(textToAdd);
+
+                const addTextButton = document.querySelector("#templateBringing");
+                addTextButton.addEventListener('click', function() {
+                    const currentData = editor.getData();
+                    const newData = currentData ? currentData + "<br/><br/>" + textToAdd : textToAdd;
+                    editor.setData(newData);
+                });
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        ClassicEditor.create( document.querySelector( "#editor2" ) );
+
+    </script>
+</body>
+</html>
